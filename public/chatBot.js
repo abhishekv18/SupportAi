@@ -189,7 +189,7 @@
 // })()//immediatly invoked function
 (function () {
 
-  const api_url = "http://localhost:3000/api/chat";
+  const api_url = "https://support-ai-olive.vercel.app/api/chat";
 
   const scriptTag = document.currentScript;
   const ownerId = scriptTag.getAttribute("data-owner-id");
