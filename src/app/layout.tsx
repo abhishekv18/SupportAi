@@ -15,9 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SupportAI",
   description: "The AI-powered customer support platform that helps you provide better service to your customers.",
-  icons:{
-    icon:"/ChatGPT Image May 2, 2026, 03_53_48 AM.png"
-  }
 };
 
 export default function RootLayout({
