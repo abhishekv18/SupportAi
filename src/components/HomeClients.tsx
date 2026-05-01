@@ -169,6 +169,7 @@ import React, { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import { LayoutDashboard, LogOut } from 'lucide-react'
 
 const HomeClients = ({ email }: { email?: string }) => {
   const [loading, setLoading] = useState(false)
@@ -256,29 +257,33 @@ const HomeClients = ({ email }: { email?: string }) => {
                 {firstLetter}
               </button>
 
-              <AnimatePresence>
-                {open && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8, scale: 0.98 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -8, scale: 0.98 }}
-                    className="absolute right-0 mt-3 w-48 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-xl"
-                  >
-                    <button
-                      className="w-full px-4 py-3 text-left text-sm font-medium text-zinc-700 transition hover:bg-zinc-50"
-                      onClick={() => navigate.push('/dashboard')}
-                    >
-                      Dashboard
-                    </button>
-                    <button
-                      className="w-full px-4 py-3 text-left text-sm font-medium text-red-600 transition hover:bg-red-50"
-                      onClick={handleLogout}
-                    >
-                      Logout
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+             <AnimatePresence>
+  {open && (
+    <motion.div
+      initial={{ opacity: 0, y: -8, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -8, scale: 0.98 }}
+      className="absolute right-0 mt-3 w-52 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-xl"
+    >
+      <button
+        className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm font-semibold text-zinc-700 transition hover:bg-zinc-50"
+        onClick={() => navigate.push('/dashboard')}
+      >
+        <LayoutDashboard size={16} className="text-zinc-500" />
+        Dashboard
+      </button>
+
+      <button
+        className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm font-semibold text-red-600 transition hover:bg-red-50"
+        onClick={handleLogout}
+      >
+        <LogOut size={16} className="text-red-500" />
+        Logout
+      </button>
+    </motion.div>
+  )}
+</AnimatePresence>
+
             </div>
           ) : (
             <button
