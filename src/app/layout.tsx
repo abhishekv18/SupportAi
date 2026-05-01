@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "support.ai",
   description: "The AI-powered customer support platform that helps you provide better service to your customers.",
+  icons:{
+    icon:"/5M5XPiCdF8OO0OXrA60Zajo3bESHLm78_P6qCF1Yn6IXKvc5xWFEkroDXaVgQhWy_vx1LH_unt0s9_ZDYCQk6KvQnANHzqPMV4UoZ6-9Twa7HR3c0-hEhXZXSS50_tTdpdWI_xqw5QeLgW3UW6bUQ7py-NkyJQquFA_fWWoktWe7SdYhhGb2t4wNBOmxVR9H.jpg"
+  }
 };
 
 export default function RootLayout({
