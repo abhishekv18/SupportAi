@@ -187,6 +187,19 @@
 // }
 
 // })()//immediatly invoked function
+
+
+
+
+// (function(){
+
+
+//})
+
+
+
+
+
 (function () {
 
   const api_url = "https://support-ai-olive.vercel.app/api/chat";
