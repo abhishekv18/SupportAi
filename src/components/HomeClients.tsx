@@ -192,27 +192,61 @@ const HomeClients = ({ email }: { email?: string }) => {
 
   const firstLetter = email ? email[0].toUpperCase() : 'U'
 
-  const features = [
+  // const features = [
+  //   {
+  //     title: 'Instant customer answers',
+  //     description:
+  //       'Resolve common questions about orders, pricing, returns, delivery, and services before they become support tickets.',
+  //     accent: 'bg-emerald-500',
+  //   },
+  //   {
+  //     title: 'Simple website installation',
+  //     description:
+  //       'Add SupportAI to your business website quickly and give customers a clean chat experience from day one.',
+  //     accent: 'bg-sky-500',
+  //   },
+  //   {
+  //     title: 'Controlled by your team',
+  //     description:
+  //       'Keep your assistant aligned with your business policies, tone, and customer support process.',
+  //     accent: 'bg-amber-500',
+  //   },
+  // ]
+const features = [
     {
       title: 'Instant customer answers',
       description:
         'Resolve common questions about orders, pricing, returns, delivery, and services before they become support tickets.',
       accent: 'bg-emerald-500',
+      icon: (
+        <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
     },
     {
       title: 'Simple website installation',
       description:
         'Add SupportAI to your business website quickly and give customers a clean chat experience from day one.',
       accent: 'bg-sky-500',
+      icon: (
+        <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+        </svg>
+      ),
     },
     {
       title: 'Controlled by your team',
       description:
         'Keep your assistant aligned with your business policies, tone, and customer support process.',
       accent: 'bg-amber-500',
+      icon: (
+        <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+        </svg>
+      ),
     },
   ]
-
   const metrics = [
     ['24/7', 'Customer availability'],
     ['Fast', 'Website setup'],
@@ -430,7 +464,7 @@ const HomeClients = ({ email }: { email?: string }) => {
           </div>
         </section>
 
-        <section
+        {/* <section
           id="features"
           className="border-y border-zinc-200 bg-white px-5 py-20 md:px-8"
         >
@@ -463,8 +497,43 @@ const HomeClients = ({ email }: { email?: string }) => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
+ <section
+          id="features"
+          className="border-y border-zinc-200 bg-white px-5 py-20 md:px-8"
+        >
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-2xl">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-emerald-600">
+                Why SupportAI
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-zinc-950 md:text-4xl">
+                A cleaner support experience for your customers and your team.
+              </h2>
+            </div>
 
+            <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                  className="rounded-lg border border-zinc-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <div className={`mb-6 h-10 w-10 rounded-lg ${feature.accent} flex items-center justify-center`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-zinc-950">{feature.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-zinc-600">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
         <section id="launch" className="px-5 py-20 md:px-8">
           <div className="mx-auto max-w-7xl rounded-lg bg-zinc-950 px-6 py-12 text-white md:px-12">
             <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
